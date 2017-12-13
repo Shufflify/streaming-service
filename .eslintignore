@@ -2,3 +2,4 @@ node_modules/*
 client/dist/*
 public/dist/*
 server/views/*
+streaming/node_modules/*
