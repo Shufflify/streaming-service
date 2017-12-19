@@ -4,6 +4,7 @@ config/production.json
 config/staging.json
 config/test.json
 streaming/server/assets
+oldFiles
 
 # OS X
 .DS_Store
