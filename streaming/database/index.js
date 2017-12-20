@@ -53,15 +53,15 @@ const populate = async function (n) {
     };
   }
 
-  const funcs = Promise.resolve(arrPaths.map((path) => insetStatement(path)));
+  const funcs = Promise.resolve(arrPaths.map(path => insetStatement(path)));
 
   function iterator(f) {
-    return f()
+    return f();
   }
 
   funcs
     .mapSeries(iterator)
-    .then((res) => {console.log(`Added ${res.length} entries to DB`); });
+    .then((res) => { console.log(`Added ${res.length} entries to DB`); });
 };
 
 const queryDB = function (queryString, callback) {
