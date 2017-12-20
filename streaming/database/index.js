@@ -26,7 +26,6 @@ const populate = async function (n) {
       path[2] = duration * 1000
       return;
     });
-    // path[3] = Math.floor(8 * path[1]/path[2] * 1); //calculate bit rate
   }
 
   const arrPaths = [];
