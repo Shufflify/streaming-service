@@ -1,4 +1,8 @@
 vegeta "GET https://www.google.com" | vegeta attack  | vegeta report
 
 
-echo "GET http://localhost:8080/1/0" | vegeta attack -rate=10 -duration=15s -timeout=60s | vegeta report
+echo "GET http://localhost:8080/1/0" | vegeta attack -rate=1 -duration=1s -timeout=60s | vegeta report
+
+PORT=8001 node server/index.js
+
+nginx -c `pwd`/server/loadBalancer/localhost.conf
