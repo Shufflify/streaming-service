@@ -1,0 +1,30 @@
+config:
+  target: 'http://localhost:8080'
+  phases:
+    - duration: 1
+      arrivalRate: 3
+  processor: "./stressTest.js"
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - name: "Get bundle references"
+    flow:
+      - function: "getProductId"
+      - get:
+          url: "/bundleref?product_id={{productId}}"
+      - log: "Sent a request to /bundleref with {{ productId }}"
+  - name: "Create a bundle"
+    flow:
+      - function: "generateFakeData"
+      - post:
+          url: "/createbundle"
+          json:
+            bundleName: "{{ bundleName }}"
+            itemIds: "{{ itemIds }}"
+      - log: "Sent a request to /createbundle with {{ bundleName }}, {{ itemIds }}"
+  - name: "Update bundles through a queue"
+    flow:
+      - get:
+          url: "/bundleupdate"
+      - log: "Sent a request to /bundleupdate"

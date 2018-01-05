@@ -1,0 +1,23 @@
+config:
+  target: 'http://localhost:8080'
+  phases:
+    - duration: 1
+      arrivalRate: 1
+  processor: "./stressTest.js"
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - name: "play whole song"
+    flow:
+      - function: "songNum"
+      - get:
+          url: "/{{ songId }}/0"
+          afterResponse: "logThis"
+      - think: 1
+      - loop:
+        - get:
+            url: "/{{ songId }}/{{ nextFragment }}/"
+            afterResponse: "setNextFragment"
+        - think: 1
+        whileTrue: "isSongComplete"

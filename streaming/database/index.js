@@ -17,6 +17,7 @@ const populate = async function (n) {
     ['server/assets/01 HUMBLE. (Skrillex Remix).mp3'],
     ['server/assets/01 HeLLo (marshmello remix).mp3'],
     ['server/assets/EKALI x TROYBOI - TRUTH.mp3'],
+    ['server/assets/Blame.mp3'],
   ];
 
   for (let path of filepaths) {

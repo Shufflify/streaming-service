@@ -15,15 +15,19 @@
   "author": "William Gross, RudyRed",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
     "nodemon": "^1.12.5"
   },
   "dependencies": {
+    "autocannon": "^0.16.5",
     "aws-sdk": "^2.172.0",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "cluster": "^0.7.7",
     "express": "^4.16.2",
     "express-async-await": "^1.1.0",
+    "lodash": "^4.17.4",
     "mp3-duration": "^1.1.0",
     "mysql": "^2.15.0",
     "os": "^0.1.1",
